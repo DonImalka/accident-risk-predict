@@ -27,7 +27,9 @@ model = None
 def load_model():
     global model
     try:
-        model_path = "final_model.pkl"
+        # Get the directory where this script is located
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(script_dir, "final_model.pkl")
         if not os.path.exists(model_path):
              print(f"Model file not found at {model_path}")
              return
